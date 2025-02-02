@@ -1,0 +1,13 @@
+CREATE TABLE loans (
+    id SERIAL PRIMARY KEY,
+    book_id INTEGER REFERENCES books(id),
+    member_id INTEGER REFERENCES members(id),
+    loan_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    return_date TIMESTAMP,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    status BOOLEAN DEFAULT TRUE,
+    is_deleted BOOLEAN DEFAULT FALSE,
+    created_by UUID REFERENCES auth.users(id)
+);
+
+ALTER TABLE loans ENABLE ROW LEVEL SECURITY;
