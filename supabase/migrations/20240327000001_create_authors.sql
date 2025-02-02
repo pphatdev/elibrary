@@ -1,0 +1,11 @@
+CREATE TABLE authors (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    bio TEXT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    status BOOLEAN DEFAULT TRUE,
+    is_deleted BOOLEAN DEFAULT FALSE,
+    created_by UUID REFERENCES auth.users(id)
+);
+
+ALTER TABLE authors ENABLE ROW LEVEL SECURITY;
