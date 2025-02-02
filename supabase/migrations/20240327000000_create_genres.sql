@@ -1,0 +1,11 @@
+CREATE TABLE genres (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    description TEXT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    status BOOLEAN DEFAULT TRUE,
+    is_deleted BOOLEAN DEFAULT FALSE,
+    created_by UUID REFERENCES auth.users(id)
+);
+
+ALTER TABLE genres ENABLE ROW LEVEL SECURITY;
