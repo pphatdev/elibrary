@@ -1,9 +1,10 @@
+import React from "react"
 import { AppSidebar } from "./app-sidebar"
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "./ui/breadcrumb"
 import { Separator } from "./ui/separator"
 import { SidebarInset, SidebarProvider, SidebarTrigger } from "./ui/sidebar"
 
-export const Container = ({ children }: { children: React.ReactNode }) => {
+export const Container = ({ children, breadcrumb = [] }: { children: React.ReactNode, breadcrumb: Array<Record<string, any>> }) => {
     return (
         <SidebarProvider>
             <AppSidebar />
@@ -14,15 +15,18 @@ export const Container = ({ children }: { children: React.ReactNode }) => {
                         <Separator orientation="vertical" className="mr-2 h-4" />
                         <Breadcrumb>
                             <BreadcrumbList>
-                                <BreadcrumbItem className="hidden md:block">
-                                    <BreadcrumbLink href="#">
-                                        Building Your Application
-                                    </BreadcrumbLink>
-                                </BreadcrumbItem>
-                                <BreadcrumbSeparator className="hidden md:block" />
-                                <BreadcrumbItem>
-                                    <BreadcrumbPage>Data Fetching</BreadcrumbPage>
-                                </BreadcrumbItem>
+                                {breadcrumb.map((item, index) => (
+                                    <React.Fragment key={index}>
+                                        <BreadcrumbItem>
+                                            {item.href ? (
+                                                <BreadcrumbLink href={item.href}>{item.label}</BreadcrumbLink>
+                                            ) : (
+                                                <BreadcrumbPage>{item.label}</BreadcrumbPage>
+                                            )}
+                                        </BreadcrumbItem>
+                                        {index < breadcrumb.length - 1 && <BreadcrumbSeparator />}
+                                    </React.Fragment>
+                                ))}
                             </BreadcrumbList>
                         </Breadcrumb>
                     </div>
