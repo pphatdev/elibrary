@@ -1,6 +1,5 @@
 
 import { Container } from '@/components/container'
-import { MainContent } from '@/components/main-content'
 import { Button } from '@/components/ui/button'
 import { ScrollArea, ScrollBar } from '@/components/ui/scroll-area'
 import { createClient } from '@/utils/supabase/server'
@@ -58,7 +57,7 @@ export default async function Home() {
     console.log(books);
 
     return (
-        <Container>
+        <Container breadcrumb={[{ label: "ទំព័រដើម" }]}>
             <h1 className="text-3xl font-bold">ទំព័រដើម</h1>
             <p className="text-muted-foreground">Welcome back!</p>
             <ScrollArea className="mt-8 w-full">
