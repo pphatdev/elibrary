@@ -38,35 +38,21 @@ const data = {
   navMain: [
     {
       title: "រឿងអក្សរសិល្ប៍",
-      url: "#",
+      url: "/",
       icon: Folder,
       isActive: true,
-      // items: [
-      //   {
-      //     title: "History",
-      //     url: "#",
-      //   },
-      //   {
-      //     title: "Starred",
-      //     url: "#",
-      //   },
-      //   {
-      //     title: "Settings",
-      //     url: "#",
-      //   },
-      // ],
     },
     {
       title: "រឿងប្រឡោមលោក",
       url: "#",
       icon: Folder,
-      isActive: true
+      isActive: false
     },
     {
       title: "រឿងព្រេង",
       url: "#",
       icon: Folder,
-      isActive: true
+      isActive: false
     },
   ],
   navSecondary: [

@@ -111,7 +111,7 @@ export default async function Home() {
                     </div>
                 </nav>
 
-                <div className="grid grid-cols-1 mt-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                <div className="grid grid-cols-1 mt-10 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-8">
                     {contents.map((item, key) => (
                         <div key={key} className="flex flex-col gap-1 relative">
                             <div className="bg-muted rounded-lg aspect-[3/4] mb-2 flex items-center group justify-center relative overflow-hidden bg-white ring-1 ring-border">

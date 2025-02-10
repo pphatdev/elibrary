@@ -18,6 +18,7 @@ import {
   SidebarMenuSubButton,
   SidebarMenuSubItem,
 } from "@/components/ui/sidebar"
+import { usePathname } from "next/navigation"
 
 export function NavMain({
   items,
@@ -40,7 +41,11 @@ export function NavMain({
         {items.map((item, k) => (
           <Collapsible key={k} asChild defaultOpen={item.isActive}>
             <SidebarMenuItem>
-              <SidebarMenuButton asChild tooltip={item.title}>
+              <SidebarMenuButton
+                asChild
+                tooltip={item.title}
+                isActive={usePathname() === item.url}
+              >
                 <a href={item.url}>
                   <item.icon />
                   <span>{item.title}</span>
