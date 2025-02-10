@@ -111,12 +111,13 @@ export default async function Home() {
                     </div>
                 </nav>
 
-                <div className="grid grid-cols-1 mt-10 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 mt-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
                     {contents.map((item, key) => (
                         <div key={key} className="flex flex-col gap-1 relative">
-                            <div className="bg-muted rounded-lg aspect-video mb-2 flex items-center justify-center relative overflow-hidden bg-white ring-1 ring-border">
-                                <Image src={item.thumbnail} className='object-fill w-fit h-full' width={100} height={100} alt="Profile picture" />
-                                <Link href={item?.slug} className='absolute inset-0 opacity-0'></Link>
+                            <div className="bg-muted rounded-lg aspect-[3/4] mb-2 flex items-center group justify-center relative overflow-hidden bg-white ring-1 ring-border">
+                                <Image src={item.thumbnail} className='object-cover w-full h-full scale-125 group-hover:scale-150 transition-all blur-sm absolute bg-black -z-0' width={100} height={100} alt="Profile picture" />
+                                <Image src={item.thumbnail} className='object-fill shadow-2xl w-fit h-full z-10 transition duration-300 group-hover:scale-105' width={100} height={100} alt="Profile picture" />
+                                <Link href={item?.slug} className='absolute inset-0 opacity-0 z-50'></Link>
                             </div>
                             <div className='flex justify-between gap-2 items-center'>
                                 <div className='relative'>
