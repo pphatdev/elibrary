@@ -27,6 +27,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
+        suppressHydrationWarning
         className={`${kantumruyPro.variable} ${poppins.variable} antialiased`}
       >
         {children}
