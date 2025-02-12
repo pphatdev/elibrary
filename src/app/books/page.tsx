@@ -3,9 +3,9 @@ import { Container } from "@/components/container";
 import { contents } from "@/data/books";
 import { Breadcrumbs } from "@/types/breadcrumbs";
 import { useSearchParams } from "next/navigation";
+import { Suspense } from "react";
 
-export default function BookContent() {
-
+function BookContentInner() {
     const searchParams = useSearchParams();
     const id = searchParams.get('id');
     const book = contents.find(content => content.id == id);
@@ -22,14 +22,20 @@ export default function BookContent() {
                 <nav className='flex justify-between items-center'>
                     <h1 className="text-3xl font-bold">{book?.title}</h1>
                     <div className='flex gap-2'>
-
                     </div>
                 </nav>
 
                 <div className="grid grid-cols-1 mt-10 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-8">
-
                 </div>
             </div>
         </Container>
+    );
+}
+
+export default function BookContent() {
+    return (
+        <Suspense fallback={<div>Loading...</div>}>
+            <BookContentInner />
+        </Suspense>
     );
 }
