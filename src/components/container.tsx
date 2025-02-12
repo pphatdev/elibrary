@@ -3,8 +3,9 @@ import { AppSidebar } from "./app-sidebar"
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "./ui/breadcrumb"
 import { Separator } from "./ui/separator"
 import { SidebarInset, SidebarProvider, SidebarTrigger } from "./ui/sidebar"
+import { Breadcrumbs } from "@/types/breadcrumbs"
 
-export const Container = ({ children, breadcrumb = [] }: { children: React.ReactNode, breadcrumb: Array<Record<string, any>> }) => {
+export const Container = ({ children, breadcrumb = [] }: { children: React.ReactNode, breadcrumb: Breadcrumbs[] }) => {
     return (
         <SidebarProvider>
             <AppSidebar />
