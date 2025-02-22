@@ -1,5 +1,6 @@
 import React from "react"
 import { AppSidebar } from "./app-sidebar"
+import NextTopLoader from 'nextjs-toploader';
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "./ui/breadcrumb"
 import { Separator } from "./ui/separator"
 import { SidebarInset, SidebarProvider, SidebarTrigger } from "./ui/sidebar"
@@ -10,6 +11,7 @@ export const Container = ({ children, breadcrumb = [] }: { children: React.React
         <SidebarProvider>
             <AppSidebar />
             <SidebarInset>
+                <NextTopLoader />
                 <header className="flex h-16 shrink-0 items-center gap-2">
                     <div className="flex items-center gap-2 px-4">
                         <SidebarTrigger className="-ml-1" />
