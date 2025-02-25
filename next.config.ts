@@ -10,7 +10,15 @@ const nextConfig: NextConfig = {
         pathname: '/pphatdev.png',
       },
     ],
-  }
+  },
+  // webpack: (config) => {
+  //   // Allow importing pdf files
+  //   config.module.rules.push({
+  //     test: /\.pdf$/,
+  //     use: 'file-loader',
+  //   });
+  //   return config;
+  // },
 };
 
 export default nextConfig;

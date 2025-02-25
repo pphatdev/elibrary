@@ -9,6 +9,9 @@ export default {
 	],
 	theme: {
 		extend: {
+			fontSize: {
+				xxs: '0.625rem',
+			},
 			colors: {
 				background: 'hsl(var(--background))',
 				foreground: 'hsl(var(--foreground))',
