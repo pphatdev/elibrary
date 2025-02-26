@@ -1,7 +1,7 @@
 'use client';
 
-import { useState, useRef, DragEvent } from 'react';
-import dynamic from 'next/dynamic';
+import { useState, useRef, DragEvent, Suspense } from 'react';
+
 import { Container } from '@/components/container';
 import { Breadcrumbs } from '../../types/breadcrumbs';
 import { useSearchParams } from 'next/navigation';
@@ -15,7 +15,7 @@ import { SearchIcon } from 'lucide-react';
 //     ssr: false,
 // });
 
-export default function Home() {
+function BookContent() {
 
     const searchParams = useSearchParams();
     const id = searchParams.get('id');
@@ -114,4 +114,12 @@ export default function Home() {
             </div>
         </Container>
     );
+}
+
+export default function Books() {
+    return (
+        <Suspense fallback={<div>Loading...</div>}>
+            <BookContent />
+        </Suspense>
+    )
 }
