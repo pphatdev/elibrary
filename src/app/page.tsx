@@ -30,7 +30,7 @@ export default async function Home() {
                 </nav>
 
                 <div className="grid grid-cols-1 mt-10 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-8">
-                    {contents.map((item, key) => <BlogCard item={item} cardKey={String(key)} /> )}
+                    {contents.map((item, key) => <BlogCard item={item} cardKey={key} /> )}
                 </div>
             </div>
         </Container>
