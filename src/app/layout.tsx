@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Kantumruy_Pro, Poppins } from "next/font/google";
-import "./globals.css";
+import "../styles/globals.css";
 
 const kantumruyPro = Kantumruy_Pro({
   variable: "--font-kantumruy",
