@@ -3,10 +3,10 @@ import { type Contents } from '../../types/books';
 import Link from 'next/link';
 import { Avatar, AvatarFallback, AvatarImage } from './avatar';
 import { EyeIcon } from 'lucide-react';
-export const BlogCard = ({ cardKey, item }:{cardKey: string, item: Contents }) => {
-    const randomKey = Math.random().toString(36).substring(7);
-    return(
-        <div key={cardKey + randomKey} className="flex flex-col gap-1 relative">
+export const BlogCard = ({ cardKey, item }: { cardKey: number, item: Contents }) => {
+    const randomKey: number = parseInt(Math.random().toString(36).substring(7), 36);
+    return (
+        <div key={cardKey || randomKey} className="flex flex-col gap-1 relative">
             <div className="bg-muted rounded-lg aspect-[3/4] mb-2 flex items-center group justify-center relative overflow-hidden bg-white ring-1 ring-border">
                 <Image src={item.thumbnail} className='object-fill shadow-2xl h-full z-10 transition w-full duration-300 group-hover:scale-105' width={100} height={100} alt="Profile picture" />
                 <Link href={item?.slug} className='absolute inset-0 opacity-0 z-50'></Link>

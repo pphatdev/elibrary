@@ -28,7 +28,10 @@ function BookContent() {
         <Container breadcrumb={breadcrumbs}>
             <div className='container mx-auto'>
                 <nav className='flex justify-between items-center'>
-                    <h1 className="text-3xl font-bold">រឿងអក្សរសិល្ប៍</h1>
+                    <div>
+                        <h1 className="text-3xl font-bold">រឿងអក្សរសិល្ប៍</h1>
+                        <p className='mt-2 font-medium'>Descriptions</p>
+                    </div>
                     <div className='flex gap-2'>
                         <div className="relative">
                             <Input name='search' placeholder='ស្វែងរក...' className='pl-8'></Input>

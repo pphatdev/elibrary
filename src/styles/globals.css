@@ -1,0 +1,192 @@
+@import url("./pdf.css");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 0 0% 100%;
+  --foreground: 0 0% 3.9%;
+  --card: 0 0% 100%;
+  --card-foreground: 0 0% 3.9%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 0 0% 3.9%;
+  --primary: 0 0% 9%;
+  --primary-foreground: 0 0% 98%;
+  --secondary: 0 0% 96.1%;
+  --secondary-foreground: 0 0% 9%;
+  --muted: 0 0% 96.1%;
+  --muted-foreground: 0 0% 45.1%;
+  --accent: 0 0% 96.1%;
+  --accent-foreground: 0 0% 9%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 0 0% 98%;
+  --border: 0 0% 89.8%;
+  --input: 0 0% 89.8%;
+  --ring: 0 0% 3.9%;
+  --chart-1: 12 76% 61%;
+  --chart-2: 173 58% 39%;
+  --chart-3: 197 37% 24%;
+  --chart-4: 43 74% 66%;
+  --chart-5: 27 87% 67%;
+  --radius: 0.5rem;
+  --sidebar-background: 0 0% 98%;
+  --sidebar-foreground: 240 5.3% 26.1%;
+  --sidebar-primary: 240 5.9% 10%;
+  --sidebar-primary-foreground: 0 0% 98%;
+  --sidebar-accent: 240 4.8% 95.9%;
+  --sidebar-accent-foreground: 240 5.9% 10%;
+  --sidebar-border: 220 13% 91%;
+  --sidebar-ring: 217.2 91.2% 59.8%;
+  --font-sans: "Kantumruy Pro", sans-serif;
+  --rpv-default-layout__sidebar-headers-background-color: var(
+    --sidebar-primary
+  );
+
+  --rpv-core__annotation--link-hover-background-color: rgba(255, 255, 0, 0.2);
+  --rpv-core__annotation-popup-wrapper-background-color: #faf089;
+  --rpv-core__annotation-popup-wrapper-box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --rpv-core__annotation-popup-content-border-top-color: #1a202c;
+  --rpv-core__arrow-border-color: rgba(0, 0, 0, 0.3);
+  --rpv-core__asking-password-color: #000;
+  --rpv-core__asking-password-wrapper-background-color: #fff;
+  --rpv-core__asking-password-wrapper-border-color: rgba(0, 0, 0, 0.3);
+  --rpv-core__button-background-color: rgba(0, 0, 0, 0.3);
+  --rpv-core__button-color: #000;
+  --rpv-core__doc-error-background-color: #fff;
+  --rpv-core__doc-error-text-background-color: #c02424;
+  --rpv-core__doc-error-text-color: #fff;
+  --rpv-core__doc-loading-background-color: #fff;
+  --rpv-core__full-screen-target-background-color: #fff;
+  --rpv-core__inner-page-background-color: #fff;
+  --rpv-core__menu-divider-border-bottom-color: rgba(0, 0, 0, 0.3);
+  --rpv-core__menu-item-color: #000;
+  --rpv-core__menu-item--hover-background-color: rgba(0, 0, 0, 0.1);
+  --rpv-core__menu-item--disabled-color: rgba(0, 0, 0, 0.3);
+  --rpv-core__minimal-button-color: #000;
+  --rpv-core__minimal-button--hover-background-color: rgba(0, 0, 0, 0.1);
+  --rpv-core__minimal-button--disabled-color: rgba(0, 0, 0, 0.3);
+  --rpv-core__minimal-button--selected-background-color: rgba(0, 0, 0, 0.1);
+  --rpv-core__modal-body-background-color: #fff;
+  --rpv-core__modal-body-border-color: rgba(0, 0, 0, 0.3);
+  --rpv-core__modal-overlay-background-color: rgba(0, 0, 0, 0.5);
+  --rpv-core__page-layer-box-shadow: 2px 2px 8px 0 rgba(0, 0, 0, 0.2);
+  --rpv-core__popover-body-background-color: #fff;
+  --rpv-core__popover-body-border-color: rgba(0, 0, 0, 0.3);
+  --rpv-core__popover-body-color: #000;
+  --rpv-core__primary-button-background-color: #2566e8;
+  --rpv-core__primary-button-color: #fff;
+  --rpv-core__progress-bar-background-color: rgba(0, 0, 0, 0.1);
+  --rpv-core__progress-bar-progress-background-color: #2566e8;
+  --rpv-core__progress-bar-progress-color: #fff;
+  --rpv-core__separator-border-bottom-color: rgba(0, 0, 0, 0.3);
+  --rpv-core__spinner-border-color: rgba(0, 0, 0, 0.4);
+  --rpv-core__spinner-border-transparent-color: transparent;
+  --rpv-core__splitter-background-color: transparent;
+  --rpv-core__splitter--hover-background-color: rgba(0, 0, 0, 0.2);
+  --rpv-core__text-layer-text--selection-background-color: rgb(0, 0, 255, 1);
+  --rpv-core__text-layer-text--selection-color: transparent;
+  --rpv-core__textbox-background-color: #fff;
+  --rpv-core__textbox-border-color: rgba(0, 0, 0, 0.2);
+  --rpv-core__textbox-color: #000;
+  --rpv-core__tooltip-body-background-color: #000;
+  --rpv-core__tooltip-body-color: #fff;
+  --rpv-toolbar__label--color: #000;
+
+  --rpv-drop__area-background-color: #fff;
+  --rpv-drop__area-body-border-color: rgba(0, 0, 0, 0.3);
+  --rpv-drop__area-body-color: #000;
+
+  --rpv-attachment__item--hover-background-color: rgba(0, 0, 0, 0.1);
+  --rpv-attachment__item-color: #000;
+
+  --rpv-bookmark__item--hover-background-color: rgba(0, 0, 0, 0.1);
+  --rpv-bookmark__item-color: #000;
+
+  --rpv-thumbnail__container-background-color: #fff;
+  --rpv-thumbnail__container-box-shadow: rgba(0, 0, 0, 0.2) 2px 2px 8px 0px;
+  --rpv-thumbnail__item--selected-background-color: rgba(0, 0, 0, 0.3);
+
+  --rpv-search__highlight-background-color: rgba(255, 255, 0, 0.4);
+  --rpv-search__highlight--current-background-color: rgba(0, 128, 0, 0.4);
+
+  --rpv-default-layout__body-background-color: #fff;
+  --rpv-default-layout__container-border-color: rgba(0, 0, 0, 0.3);
+  --rpv-default-layout__toolbar-background-color: #eee;
+  --rpv-default-layout__toolbar-border-bottom-color: rgba(0, 0, 0, 0.1);
+  --rpv-default-layout__sidebar-border-color: rgba(0, 0, 0, 0.2);
+  --rpv-default-layout__sidebar--opened-background-color: #fff;
+  --rpv-default-layout__sidebar-headers-background-color: #eee;
+  --rpv-default-layout__sidebar-content--opened-background-color: #fff;
+  --rpv-default-layout__sidebar-content--opened-border-color: rgba( 0, 0, 0, 0.2);
+  --rpv-default-layout__sidebar-content--opened-color: #000;
+
+  --rpv-zoom__popover-target-arrow-border-color: rgba(0, 0, 0, 0.6);
+
+  --rpv-full-screen__overlay-background-color: #fff;
+
+  --rpv-print__progress-body-background-color: #fff;
+  --rpv-print__progress-body-border-color: rgba(0, 0, 0, 0.3);
+  --rpv-print__progress-body-color: #000;
+}
+.dark {
+  --background: 0 0% 3.9%;
+  --foreground: 0 0% 98%;
+  --card: 0 0% 3.9%;
+  --card-foreground: 0 0% 98%;
+  --popover: 0 0% 3.9%;
+  --popover-foreground: 0 0% 98%;
+  --primary: 0 0% 98%;
+  --primary-foreground: 0 0% 9%;
+  --secondary: 0 0% 14.9%;
+  --secondary-foreground: 0 0% 98%;
+  --muted: 0 0% 14.9%;
+  --muted-foreground: 0 0% 63.9%;
+  --accent: 0 0% 14.9%;
+  --accent-foreground: 0 0% 98%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 0 0% 98%;
+  --border: 0 0% 14.9%;
+  --input: 0 0% 14.9%;
+  --ring: 0 0% 83.1%;
+  --chart-1: 220 70% 50%;
+  --chart-2: 160 60% 45%;
+  --chart-3: 30 80% 55%;
+  --chart-4: 280 65% 60%;
+  --chart-5: 340 75% 55%;
+  --sidebar-background: 240 5.9% 10%;
+  --sidebar-foreground: 240 4.8% 95.9%;
+  --sidebar-primary: 224.3 76.3% 48%;
+  --sidebar-primary-foreground: 0 0% 100%;
+  --sidebar-accent: 240 3.7% 15.9%;
+  --sidebar-accent-foreground: 240 4.8% 95.9%;
+  --sidebar-border: 240 3.7% 15.9%;
+  --sidebar-ring: 217.2 91.2% 59.8%;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-default;
+  }
+}
+
+.rpv-default-layout__sidebar-headers,
+.rpv-default-layout__toolbar {
+  @apply !bg-transparent;
+}
+
+.rpv-default-layout__sidebar--ltr,
+.rpv-default-layout__container {
+  @apply !border-none;
+}
+
+.rpv-default-layout__sidebar-tabs {
+  @apply border-r;
+}
+
+.rpv-default-layout__toolbar {
+  @apply p-1;
+}
