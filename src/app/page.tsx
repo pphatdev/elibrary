@@ -9,8 +9,8 @@ export default async function Home() {
     return (
         <Container breadcrumb={[{ label: "ទំព័រដើម" }, { label: "រឿងអក្សរសិល្ប៍" }]}>
             <div className='container mx-auto'>
-                <nav className='flex justify-between items-center'>
-                    <h1 className="text-3xl font-bold">រឿងអក្សរសិល្ប៍</h1>
+                <nav className='flex flex-col gap-5 md:flex-row justify-between items-center'>
+                    <h1 className="text-3xl font-bold line-clamp-1">រឿងអក្សរសិល្ប៍</h1>
                     <div className='flex gap-2'>
                         <div className="relative">
                             <Input name='search' placeholder='ស្វែងរក...' className='pl-8'></Input>
@@ -30,7 +30,11 @@ export default async function Home() {
                 </nav>
 
                 <div className="grid grid-cols-1 mt-10 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-8">
-                    {contents.map((item, key) => <BlogCard item={item} cardKey={key} /> )}
+                    {contents.map((item) => (
+                        <BlogCard
+                            key={item.id || `blog-${Math.random()}`}
+                            item={item} cardKey={0}                        />
+                    ))}
                 </div>
             </div>
         </Container>

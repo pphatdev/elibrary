@@ -27,9 +27,9 @@ function BookContent() {
     return (
         <Container breadcrumb={breadcrumbs}>
             <div className='container mx-auto'>
-                <nav className='flex justify-between items-center'>
+                <nav className='flex flex-col gap-5 md:flex-row justify-between items-center'>
                     <div>
-                        <h1 className="text-3xl font-bold">រឿងអក្សរសិល្ប៍</h1>
+                        <h1 className="text-3xl font-bold line-clamp-1">រឿងអក្សរសិល្ប៍</h1>
                         <p className='mt-2 font-medium'>Descriptions</p>
                     </div>
                     <div className='flex gap-2'>
